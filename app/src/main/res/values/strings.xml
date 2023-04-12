@@ -11,14 +11,15 @@
     <string name="title_info">Info</string>
     <string name="disclaimer">Please note that the accuracy of this Qibla Finder may vary and should not be relied upon for precise direction towards the Qibla.</string>
     <string name="label_coordinate">Current Coordinate</string>
-    <string name="label_distance">Distance to Kaaba</string>
+    <string name="label_accuracy">Accuracy</string>
     <string name="label_azimuth">Compass Azimuth</string>
     <string name="label_bearing">Bearing</string>
-    <string name="widget_title">QIBLA</string>
-    <string name="action_language">Language</string>
+    <string name="widget_qibla_label">Qibla Direction</string>
     <string name="reset_camera">Reset Camera</string>
     <string name="permission_alert">Location permission required</string>
     <string name="permission_alert_message">This app cannot function without location permission. Please grant location permission or close the app.</string>
     <string name="permission_alert_close">Close</string>
     <string name="snackbar_getting_loc">Getting Location...</string>
+    <string name="widget_location_label">Current Location</string>
+    <string name="widget_last_label">Last Update</string>
 </resources>

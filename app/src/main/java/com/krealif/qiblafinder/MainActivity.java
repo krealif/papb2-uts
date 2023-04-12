@@ -77,18 +77,16 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
-        switch (requestCode) {
-            case 1: {
-                if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-                    if (ContextCompat.checkSelfPermission(MainActivity.this,
-                            Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED) {
-                        showSnackbar();
-                        Intent intent = new Intent(PERMISSION_GRANTED_ACTION);
-                        sendBroadcast(intent);
-                    }
-                } else {
-                    showAlertDialog();
+        if (requestCode == 1) {
+            if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                if (ContextCompat.checkSelfPermission(MainActivity.this,
+                        Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED) {
+                    showSnackbar();
+                    Intent intent = new Intent(PERMISSION_GRANTED_ACTION);
+                    sendBroadcast(intent);
                 }
+            } else {
+                showAlertDialog();
             }
         }
     }

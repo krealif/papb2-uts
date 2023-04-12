@@ -6,7 +6,7 @@
         android:title="@string/title_maps" />
     <item
         android:id="@+id/navigation_compass"
-        android:icon="@drawable/baseline_compass_24"
+        android:icon="@drawable/baseline_explore_24"
         android:title="@string/title_compass" />
     <item
         android:id="@+id/navigation_info"

@@ -7,12 +7,18 @@ import android.appwidget.AppWidgetProvider;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.location.Address;
+import android.location.Geocoder;
 import android.location.Location;
 import android.widget.RemoteViews;
 import android.widget.Toast;
 
 import androidx.core.content.ContextCompat;
 
+import java.io.IOException;
+import java.text.DateFormat;
+import java.util.Date;
+import java.util.List;
 import java.util.Locale;
 
 /**
@@ -25,6 +31,7 @@ public class AppWidget extends AppWidgetProvider {
 
     private void updateAppWidget(Context context, AppWidgetManager appWidgetManager, int appWidgetId) {
         RemoteViews views = new RemoteViews(context.getPackageName(), R.layout.app_widget);
+
         locationHelper = LocationHelper.getInstance(context);
         if (ContextCompat.checkSelfPermission(context,
                 Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED) {
@@ -35,7 +42,21 @@ public class AppWidget extends AppWidgetProvider {
                 public void onLocationResult(Location location) {
                     currentLocation = location;
                     float bearingToKaaba = LocationHelper.getBearingToLocation(currentLocation, MapsFragment.kaabaCoordinate);
-                    views.setTextViewText(R.id.azimuth_txt, String.format(Locale.getDefault(),"%d°", (int)bearingToKaaba));
+                    views.setTextViewText(R.id.qibla_txt, String.format(Locale.getDefault(),"%d°", (int)bearingToKaaba));
+
+                    Geocoder geocoder = new Geocoder(context, Locale.getDefault());
+                    List<Address> addresses;
+                    try {
+                        addresses = geocoder.getFromLocation(location.getLatitude(), location.getLongitude(), 1);
+                    } catch (IOException e) {
+                        throw new RuntimeException(e);
+                    }
+                    if (addresses != null && !addresses.isEmpty()) {
+                        Address address = addresses.get(0);
+                        String locationName = address.getLocality();
+                        views.setTextViewText(R.id.my_loc_txt, locationName);
+                    }
+
                     appWidgetManager.updateAppWidget(appWidgetId, views);
                 }
                 @Override
@@ -44,6 +65,9 @@ public class AppWidget extends AppWidgetProvider {
                 }
             });
         }
+
+        String dateString = DateFormat.getTimeInstance(DateFormat.SHORT).format(new Date());
+        views.setTextViewText(R.id.last_update_txt, dateString);
 
         Intent intentUpdate = new Intent(context, AppWidget.class);
         intentUpdate.setAction(AppWidgetManager.ACTION_APPWIDGET_UPDATE);

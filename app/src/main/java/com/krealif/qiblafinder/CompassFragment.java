@@ -21,8 +21,6 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.google.android.gms.maps.model.LatLng;
-
 import java.util.Locale;
 
 public class CompassFragment extends Fragment implements CompassSensor.OnSensorChangedListener {

@@ -29,7 +29,7 @@ public class InfoFragment extends Fragment implements CompassSensor.OnSensorChan
     private Location currentLocation;
 
     private TextView coordinateTxt;
-    private TextView distanceTxt;
+    private TextView accuracyTxt;
     private TextView azimuthTxt;
     private TextView bearingTxt;
 
@@ -60,7 +60,7 @@ public class InfoFragment extends Fragment implements CompassSensor.OnSensorChan
         View view = inflater.inflate(R.layout.fragment_info, container, false);
 
         coordinateTxt = view.findViewById(R.id.coordinate_txt);
-        distanceTxt = view.findViewById(R.id.distance_txt);
+        accuracyTxt = view.findViewById(R.id.accuracy_txt);
         azimuthTxt = view.findViewById(R.id.azimuth_txta);
         bearingTxt = view.findViewById(R.id.bearing_txt);
 
@@ -94,12 +94,12 @@ public class InfoFragment extends Fragment implements CompassSensor.OnSensorChan
                     // set text coordinate
                     String coor = String.format(Locale.getDefault(), "%f %f", location.getLatitude(),location.getLongitude());
                     coordinateTxt.setText(coor);
-                    // set text distance
-                    float distance = location.distanceTo(LocationHelper.getLocationFromLatLng(MapsFragment.kaabaCoordinate))/1000;
-                    distanceTxt.setText(String.format(Locale.getDefault(), "%.2f KM", distance));
+                    // set text accuracy
+                    float accuracy = location.getAccuracy();
+                    accuracyTxt.setText(String.format(Locale.getDefault(), "%.1f M", accuracy));
                     // set text bearing
                     float bearingToKaaba = LocationHelper.getBearingToLocation(currentLocation, MapsFragment.kaabaCoordinate);
-                    bearingTxt.setText(String.format(Locale.getDefault(), "%.2f", bearingToKaaba));
+                    bearingTxt.setText(String.format(Locale.getDefault(), "%.2f°", bearingToKaaba));
                 }
                 @Override
                 public void onLocationError(String errorMessage) {
@@ -112,6 +112,6 @@ public class InfoFragment extends Fragment implements CompassSensor.OnSensorChan
     @Override
     public void onSensorChanged(float azimuth) {
         int azimuthInt = (int) azimuth;
-        azimuthTxt.setText(String.format(Locale.getDefault(), "%d", azimuthInt));
+        azimuthTxt.setText(String.format(Locale.getDefault(), "%d°", azimuthInt));
     }
 }

@@ -8,14 +8,15 @@
     <string name="title_info">معلومات</string>
     <string name="disclaimer">يرجى ملاحظة أن دقة مكتشف القبلة هذا قد تختلف ولا ينبغي الاعتماد عليها في الاتجاه الدقيق نحو القبلة.</string>
     <string name="label_coordinate">الإحداثيات الحالية</string>
-    <string name="label_distance">المسافة إلى الكعبة</string>
     <string name="label_azimuth">بوصلة السمت</string>
     <string name="label_bearing">اتجاه</string>
-    <string name="widget_title">القبله</string>
-    <string name="action_language">لغة</string>
+    <string name="widget_qibla_label">اتجاه القبلة</string>
     <string name="reset_camera">إعادة ضبط الكاميرا</string>
     <string name="permission_alert">إذن الموقع مطلوب</string>
     <string name="permission_alert_message">لا يمكن أن يعمل هذا التطبيق بدون إذن الموقع. يرجى منح إذن الموقع أو إغلاق التطبيق.</string>
     <string name="permission_alert_close">غلق</string>
     <string name="snackbar_getting_loc">الحصول على الموقع...</string>
+    <string name="label_accuracy">دقة</string>
+    <string name="widget_location_label">الموقع الحالي</string>
+    <string name="widget_last_label">آخر تحديث</string>
 </resources>

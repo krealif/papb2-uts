@@ -22,6 +22,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
@@ -37,6 +38,8 @@ import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.gms.maps.model.Polyline;
 import com.google.android.gms.maps.model.PolylineOptions;
 
+import java.util.Locale;
+
 public class MapsFragment extends Fragment implements CompassSensor.OnSensorChangedListener {
 
     public static GoogleMap map;
@@ -49,6 +52,7 @@ public class MapsFragment extends Fragment implements CompassSensor.OnSensorChan
 
     private CompassSensor compassSensor;
 
+    private TextView azimuthIndicator;
     private Button resetCameraBtn;
     private boolean isCameraLocked = true;
 
@@ -100,6 +104,7 @@ public class MapsFragment extends Fragment implements CompassSensor.OnSensorChan
                              @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_maps, container, false);
+        azimuthIndicator = view.findViewById(R.id.azimuth_indicator);
         resetCameraBtn = view.findViewById(R.id.reset_button);
         resetCameraBtn.setOnClickListener(view1 -> {
             isCameraLocked = true;
@@ -189,7 +194,7 @@ public class MapsFragment extends Fragment implements CompassSensor.OnSensorChan
         PolylineOptions polylineOptions = new PolylineOptions()
                 .add(kaabaCoordinate, myLoc)
                 .width(6)
-                .color(R.color.teal_700);
+                .color(getContext().getColor(R.color.red_800));
         polyline = map.addPolyline(polylineOptions);
     }
 
@@ -204,6 +209,7 @@ public class MapsFragment extends Fragment implements CompassSensor.OnSensorChan
 
     @Override
     public void onSensorChanged(float azimuth) {
+        azimuthIndicator.setText(String.format(Locale.getDefault(), "%d°", (int)azimuth));
         if (isCameraLocked) {
             if (map != null && currentLocation != null) {
                 CameraPosition currentCameraPosition = map.getCameraPosition();

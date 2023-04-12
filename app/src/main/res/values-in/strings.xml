@@ -8,14 +8,15 @@
     <string name="title_info">Informasi</string>
     <string name="disclaimer">Mohon diperhatikan bahwa akurasi Qibla Finder ini dapat bervariasi dan seharusnya tidak diandalkan untuk menentukan arah yang tepat menuju Kiblat.</string>
     <string name="label_coordinate">Koordinat Terkini</string>
-    <string name="label_distance">Jarak ke Ka\'bah</string>
     <string name="label_azimuth">Azimuth Kompas</string>
     <string name="label_bearing">"Arah "</string>
-    <string name="widget_title">Kiblat</string>
-    <string name="action_language">Bahasa</string>
+    <string name="widget_qibla_label">Arah Kiblat</string>
     <string name="reset_camera">Reset Kamera</string>
     <string name="permission_alert">Izin lokasi diperlukan</string>
     <string name="permission_alert_message">Aplikasi ini tidak dapat berfungsi tanpa izin lokasi. Berikan izin lokasi atau tutup aplikasi.</string>
     <string name="permission_alert_close">Tutup</string>
     <string name="snackbar_getting_loc">Mendapatkan Lokasi...</string>
+    <string name="label_accuracy">Akurasi</string>
+    <string name="widget_location_label">Lokasi Terkini</string>
+    <string name="widget_last_label">Terakhir Diperbarui</string>
 </resources>

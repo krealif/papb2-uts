@@ -8,28 +8,60 @@
     android:gravity="center"
     android:theme="@style/Theme.QiblaFinder.AppWidgetContainer">
 
-    <TextView
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:fontFamily="sans-serif-black"
-        android:text="@string/widget_title"
-        android:textAppearance="@style/TextAppearance.AppCompat.Large"
-        android:textColor="@color/black" />
+        android:padding="16dp"
+        android:orientation="vertical">
 
-    <TextView
-        android:id="@+id/azimuth_txt"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:text="0°"
-        android:textAppearance="@style/TextAppearance.MaterialComponents.Headline4"
-        android:textColor="@color/black" />
+        <TextView
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/widget_qibla_label" />
+        <TextView
+            android:id="@+id/qibla_txt"
+            android:layout_marginTop="4dp"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+
+        <TextView
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@string/widget_location_label" />
+        <TextView
+            android:id="@+id/my_loc_txt"
+            android:layout_marginTop="4dp"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+
+        <TextView
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@string/widget_last_label" />
+        <TextView
+            android:id="@+id/last_update_txt"
+            android:layout_marginTop="4dp"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+
+    </LinearLayout>
 
     <Button
         android:id="@+id/refresh_button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="16dp"
         android:backgroundTint="@color/teal_500"
         android:textColor="@color/white"
         android:text="@string/refresh" />
