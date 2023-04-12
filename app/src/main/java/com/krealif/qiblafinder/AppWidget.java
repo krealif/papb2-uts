@@ -44,19 +44,8 @@ public class AppWidget extends AppWidgetProvider {
                     float bearingToKaaba = LocationHelper.getBearingToLocation(currentLocation, MapsFragment.kaabaCoordinate);
                     views.setTextViewText(R.id.qibla_txt, String.format(Locale.getDefault(),"%d°", (int)bearingToKaaba));
 
-                    Geocoder geocoder = new Geocoder(context, Locale.getDefault());
-                    List<Address> addresses;
-                    try {
-                        addresses = geocoder.getFromLocation(location.getLatitude(), location.getLongitude(), 1);
-                    } catch (IOException e) {
-                        throw new RuntimeException(e);
-                    }
-                    if (addresses != null && !addresses.isEmpty()) {
-                        Address address = addresses.get(0);
-                        String locationName = address.getLocality();
-                        views.setTextViewText(R.id.my_loc_txt, locationName);
-                    }
-
+                    GeocoderTask task = new GeocoderTask(context, appWidgetManager, appWidgetId);
+                    task.execute(location.getLatitude(), location.getLongitude());
                     appWidgetManager.updateAppWidget(appWidgetId, views);
                 }
                 @Override
@@ -73,10 +62,8 @@ public class AppWidget extends AppWidgetProvider {
         intentUpdate.setAction(AppWidgetManager.ACTION_APPWIDGET_UPDATE);
         int[] idArray = new int[]{appWidgetId};
         intentUpdate.putExtra(AppWidgetManager.EXTRA_APPWIDGET_IDS, idArray);
-
         PendingIntent pendingIntent = PendingIntent.getBroadcast(context, appWidgetId, intentUpdate
                 , PendingIntent.FLAG_UPDATE_CURRENT | PendingIntent.FLAG_IMMUTABLE);
-        views.setOnClickPendingIntent(R.id.refresh_button, pendingIntent);
     }
 
     @Override

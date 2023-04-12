@@ -5,65 +5,46 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:gravity="center"
+    android:gravity="center_vertical"
     android:theme="@style/Theme.QiblaFinder.AppWidgetContainer">
 
-    <LinearLayout
-        android:layout_width="match_parent"
+    <TextView
+        android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:padding="16dp"
-        android:orientation="vertical">
-
-        <TextView
-            android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/widget_qibla_label" />
-        <TextView
-            android:id="@+id/qibla_txt"
-            android:layout_marginTop="4dp"
-            android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+        android:text="@string/widget_qibla_label" />
+    <TextView
+        android:id="@+id/qibla_txt"
+        android:layout_marginTop="4dp"
+        android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
 
 
-        <TextView
-            android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:text="@string/widget_location_label" />
-        <TextView
-            android:id="@+id/my_loc_txt"
-            android:layout_marginTop="4dp"
-            android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
-
-
-        <TextView
-            android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:text="@string/widget_last_label" />
-        <TextView
-            android:id="@+id/last_update_txt"
-            android:layout_marginTop="4dp"
-            android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
-
-
-    </LinearLayout>
-
-    <Button
-        android:id="@+id/refresh_button"
-        android:layout_width="match_parent"
+    <TextView
+        android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:backgroundTint="@color/teal_500"
-        android:textColor="@color/white"
-        android:text="@string/refresh" />
+        android:layout_marginTop="8dp"
+        android:text="@string/widget_location_label" />
+    <TextView
+        android:id="@+id/my_loc_txt"
+        android:layout_marginTop="4dp"
+        android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="@string/widget_last_label" />
+    <TextView
+        android:id="@+id/last_update_txt"
+        android:layout_marginTop="4dp"
+        android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
 
 </LinearLayout>
