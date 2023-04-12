@@ -64,6 +64,8 @@ public class AppWidget extends AppWidgetProvider {
         intentUpdate.putExtra(AppWidgetManager.EXTRA_APPWIDGET_IDS, idArray);
         PendingIntent pendingIntent = PendingIntent.getBroadcast(context, appWidgetId, intentUpdate
                 , PendingIntent.FLAG_UPDATE_CURRENT | PendingIntent.FLAG_IMMUTABLE);
+        views.setOnClickPendingIntent(R.id.refresh_button, pendingIntent);
+        appWidgetManager.updateAppWidget(appWidgetId, views);
     }
 
     @Override
