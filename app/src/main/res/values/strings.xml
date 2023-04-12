@@ -1,0 +1,24 @@
+<resources>
+    <string name="app_name">Qibla Finder</string>
+    <string name="title_maps">Maps</string>
+    <string name="title_compass">Compass</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment" translatable="false">Hello blank fragment</string>
+    <string name="appwidget_text">Qibla Info</string>
+    <string name="add_widget" translatable="false">Add widget</string>
+    <string name="app_widget_description" translatable="false">This is an app widget description</string>
+    <string name="refresh">Refresh</string>
+    <string name="title_info">Info</string>
+    <string name="disclaimer">Please note that the accuracy of this Qibla Finder may vary and should not be relied upon for precise direction towards the Qibla.</string>
+    <string name="label_coordinate">Current Coordinate</string>
+    <string name="label_distance">Distance to Kaaba</string>
+    <string name="label_azimuth">Compass Azimuth</string>
+    <string name="label_bearing">Bearing</string>
+    <string name="widget_title">QIBLA</string>
+    <string name="action_language">Language</string>
+    <string name="reset_camera">Reset Camera</string>
+    <string name="permission_alert">Location permission required</string>
+    <string name="permission_alert_message">This app cannot function without location permission. Please grant location permission or close the app.</string>
+    <string name="permission_alert_close">Close</string>
+    <string name="snackbar_getting_loc">Getting Location...</string>
+</resources>

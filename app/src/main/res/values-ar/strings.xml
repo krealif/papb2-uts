@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Qibla Finder</string>
+    <string name="title_maps">الخرائط</string>
+    <string name="title_compass">بوصلة</string>
+    <string name="appwidget_text">معلومات القبلة</string>
+    <string name="refresh">تحديث</string>
+    <string name="title_info">معلومات</string>
+    <string name="disclaimer">يرجى ملاحظة أن دقة مكتشف القبلة هذا قد تختلف ولا ينبغي الاعتماد عليها في الاتجاه الدقيق نحو القبلة.</string>
+    <string name="label_coordinate">الإحداثيات الحالية</string>
+    <string name="label_distance">المسافة إلى الكعبة</string>
+    <string name="label_azimuth">بوصلة السمت</string>
+    <string name="label_bearing">اتجاه</string>
+    <string name="widget_title">القبله</string>
+    <string name="action_language">لغة</string>
+    <string name="reset_camera">إعادة ضبط الكاميرا</string>
+    <string name="permission_alert">إذن الموقع مطلوب</string>
+    <string name="permission_alert_message">لا يمكن أن يعمل هذا التطبيق بدون إذن الموقع. يرجى منح إذن الموقع أو إغلاق التطبيق.</string>
+    <string name="permission_alert_close">غلق</string>
+    <string name="snackbar_getting_loc">الحصول على الموقع...</string>
+</resources>
